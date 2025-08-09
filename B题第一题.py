@@ -74,7 +74,7 @@ if __name__ == "__main__":
     # 计算总现有容量和约束上限
     df_features['capacity'] = 15    #容量需重新计算
     total_old = np.sum(df_features['capacity'])
-    total_max = 1.1 * total_old
+    total_max = 14000
     x_i_opt, capacity_opt = optimize_stations(df_features, total_max, profit)
     df_features['status'] = 'close'  # 默认值
     df_features['capacity'] = 0  # 默认值
@@ -90,7 +90,7 @@ if __name__ == "__main__":
             raise ValueError(f"数据中缺少必要的列: {col}")
     df1 = df_features[selected_columns].copy()
     print(df1)
-    df1.to_csv('result_111.csv', index=False)
+    df1.to_csv('result_145.csv', index=False)
 
 
 
